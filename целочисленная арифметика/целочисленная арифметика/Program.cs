@@ -16,7 +16,7 @@ namespace целочисленная_арифметика
             a = n / 100;
             b = (n / 10) % 10;
             c = n % 10;
-            x = 100 * a + 10 * c + b;
+            x = 100 * b + 10 * a  + c;
             Console.WriteLine();
             Console.WriteLine(x);
             Console.ReadKey();
