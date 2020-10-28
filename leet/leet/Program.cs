@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace leet
 
@@ -14,15 +15,15 @@ namespace leet
         {
             Console.WriteLine("Введите текст на английском:");
             string x = F();
-            Console.WriteLine("The final string: '{0}'", x);
+            Console.WriteLine("The final string:{0}", x);
             Console.ReadKey();
         }
 
         static string F()
         {
             string x = Console.ReadLine();
-            string y = x.ToUpper();
-            return y.Replace("A", "4").Replace("B","8").Replace("C", "(").Replace("D", "|)").Replace("E", "3").Replace("F", "|=").Replace("G", "6").Replace("H", "|-|").Replace("I", "!").Replace("J", ")").Replace("K", "|<").Replace("L", "1").Replace("M", "|\\//|").Replace("N", "|\\|").Replace("O", "0").Replace("P", "|>").Replace("Q", "9").Replace("R", "|2").Replace("S", "5").Replace("T", "7").Replace("U", "|_|").Replace("V", "\\//").Replace("W", "\\//\\//").Replace("X", "><").Replace("Y", "'/").Replace("Z", "2");
+            x = x.ToUpper();
+            return x.Replace("A", "4").Replace("B","8").Replace("C", "(").Replace("D", "|)").Replace("E", "3").Replace("F", "|=").Replace("G", "6").Replace("H", "|-|").Replace("I", "!").Replace("J", ")").Replace("K", "|<").Replace("L", "1").Replace("M", "|\\//|").Replace("N", "|\\|").Replace("O", "0").Replace("P", "|>").Replace("Q", "9").Replace("R", "|2").Replace("S", "5").Replace("T", "7").Replace("U", "|_|").Replace("V", "\\//").Replace("W", "\\//\\//").Replace("X", "><").Replace("Y", "'/").Replace("Z", "2");
         }
        
     }
