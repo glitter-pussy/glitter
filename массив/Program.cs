@@ -44,19 +44,18 @@ namespace массив
 
             Console.WriteLine();
 
-            double[] geometricProgression = new double[20];
-
-            for (var i = 1; i <= 20; i++)
-            {
-                geometricProgression[i - 1] = (p * Math.Pow(q, i - 1));
-            }
-
+            var geometricProgression = CreateArray(p,q);
 
             PrintGeometricProgression(geometricProgression);
 
             PrintSquare(geometricProgression);
+                        Console.WriteLine();
+
 
             FindGeometricAverage(geometricProgression);
+                        Console.WriteLine();
+                        Console.WriteLine();
+
 
 
             while (true)
@@ -70,11 +69,25 @@ namespace массив
                 }
                 break;
             }
+             
+            Console.WriteLine();
+
 
             PrintMul(geometricProgression, k);
 
-
             Console.ReadKey();
+        }
+
+        static double[] CreateArray(double p, double q)
+        {
+           var geometricProgression = new double[20];
+            
+            for (var i = 1; i <= 20; i++)
+            {
+                geometricProgression[i - 1] = (p * Math.Pow(q, i - 1));
+            }
+
+            return geometricProgression;
         }
 
         static void PrintGeometricProgression(double[] geometricProgression)
@@ -88,6 +101,7 @@ namespace массив
             Console.WriteLine();
 
         }
+
         static void PrintSquare(double[] geometricProgression)
         {
             Console.WriteLine("Члены геометрической прогрессии, возведенные в квадрат:");
@@ -104,6 +118,7 @@ namespace массив
             Console.WriteLine();
 
         }
+
         static void FindGeometricAverage(double[] geometricProgression)
         {
             Console.WriteLine("Среднее геометрическое:");
@@ -118,24 +133,18 @@ namespace массив
             double averGeom = Math.Pow(multiplication, 0.2);
             IsRight(averGeom);
 
-
-            Console.WriteLine();
-
         }
+
         static void PrintMul(double[] geometricProgression, double k)
         {
             Console.WriteLine("Числа, умноженные на k");
 
-            double[] prolifiration = new double[20];
-            geometricProgression.CopyTo(prolifiration, 0);
-            for (int i = 0; i < 20; i++)
+            foreach (var elem in geometricProgression)
             {
-                prolifiration[i] *= k;
+                double num = elem;
+                num *= k;
+                IsRight(num);
             }
-
-            foreach (var elem in prolifiration)
-                IsRight(elem);
-            Console.WriteLine();
 
         }
 
@@ -146,8 +155,6 @@ namespace массив
 
             else
                 Console.Write($"Число слишком большое ");
-
-
         }
 
 
