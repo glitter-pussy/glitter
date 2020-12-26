@@ -17,7 +17,7 @@ namespace логическое_выражение
             string answer = "Нет.";
 
             if (EvaluateLogicalExpression(k, m, n))
-                answer = "Да.";
+                answer = "Да";
 
             Console.WriteLine("Верно ли, что только одно из чисел k, m, или n больше 15? " +
                 answer);
@@ -27,7 +27,14 @@ namespace логическое_выражение
 
         static bool EvaluateLogicalExpression(int k, int m, int n)
         {
-            return k > 15 ^ m > 15 ^ n > 15;
+            bool result = false;
+            if (k > 15 && m <= 15 && n <= 15)
+                result = true;
+            if (k <= 15 && m > 15 && n <= 15)
+                result = true;
+            if (k <= 15 && m <= 15 && n > 15)
+                result = true;
+            return result;
         }
 
         static int GetNumber(string numberName)
