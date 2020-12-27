@@ -11,7 +11,7 @@ namespace функция
         static void Main(string[] args)
         {
             Console.WriteLine("Введите значение x");
-          double x = double.Parse(Console.ReadLine());
+            double x = double.Parse(Console.ReadLine());
             GetX(x);
             Console.ReadKey();
         }
