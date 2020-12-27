@@ -13,8 +13,11 @@ namespace тренировки
             while (true)
             {
                 Console.WriteLine("Сколько лыжник пробежал в первый день?");
+                var input = Console.ReadLine();
+                if (input == "")
+                    break;
 
-                if (!double.TryParse(Console.ReadLine(), out double n))
+                if (!double.TryParse(input, out double n))
                 {
                     Console.WriteLine("Ошибка ввода\n");
                     continue;
@@ -26,9 +29,7 @@ namespace тренировки
                     continue;
                 }
 
-                string str = n.ToString();
-                if (str == "")
-                    break;
+               
 
                 Console.WriteLine("На сколько он увеличивал пробег каждый день (в процентах)");
 
