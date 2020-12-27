@@ -130,7 +130,7 @@ namespace массив
             {
                 multiplication *= elem;
             }
-            double averGeom = Math.Pow(multiplication, 0.2);
+            double averGeom = Math.Pow(multiplication, 1.0 / geometricProgression.Length);
             IsRight(averGeom);
 
         }
