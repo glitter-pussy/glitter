@@ -12,6 +12,12 @@ namespace функция
         {
             Console.WriteLine("Введите значение x");
           double x = double.Parse(Console.ReadLine());
+            GetX(x);
+            Console.ReadKey();
+        }
+
+           static void GetX(double x)
+        {
             if (x < -1)
             {
                 Console.WriteLine(" y = 1");
@@ -24,10 +30,7 @@ namespace функция
             {
                 Console.WriteLine(" y = " + GetYUpper(x));
             }
-            Console.ReadKey();
         }
-
-           
         static double GetYMiddle(double x)
         {
             return x * x;
