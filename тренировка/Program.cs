@@ -57,18 +57,23 @@ namespace тренировки
                     continue;
                 }
 
-                int numberOfDays = 1;
-
-                while (n < k)
-                {
-                    numberOfDays++;
-                    n += n / m;
-
-                }
+                int numberOfDays=FindN(n,m,k);
+                
 
                 Console.WriteLine($"\nЛыжник пробежит больше {k} км в {numberOfDays} день\n");
 
             }
+
         }
+        static int FindN(double n, double m, double k)
+            {
+                int numberOfDays = 1;
+                while (n < k)
+                {
+                    numberOfDays++;
+                    n += n*m/100;
+                }
+                return numberOfDays;
+            }
     }
 }
